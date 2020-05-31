@@ -17,12 +17,27 @@ namespace WcfService1
         string GetData(int value);
 
         [OperationContract]
+         List<Person> GetPlayers();
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here
     }
 
+    public class Person
+    {
+        [DataMember]
+        public string firstName { get; set; }
 
+        [DataMember]
+        public string LastName { get; set; }
+
+        [DataMember]
+        public int Age { get; set; }
+
+      
+    }
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     [DataContract]
     public class CompositeType
